@@ -1,0 +1,272 @@
+/* --- Estilo Fluent Design --- */
+:root {
+    --accent-color: #0078d4;
+    --accent-color-hover: #005a9e;
+    --background-color: #f3f3f3;
+    --card-background: #ffffff;
+    --text-color: #201f1e;
+    --sidebar-background: rgba(252, 252, 252, 0.7); /* Efecto Mica/Acrílico */
+    --shadow-depth: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
+/* --- Reseteo Básico --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* --- Barra Lateral (Nav) --- */
+#sidebar {
+    width: 280px;
+    height: 100vh;
+    background-color: var(--sidebar-background);
+    backdrop-filter: blur(20px) saturate(180%);
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    flex-shrink: 0;
+}
+
+.sidebar-header h3 {
+    font-weight: 600;
+    font-size: 24px;
+    padding-bottom: 20px;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.nav-links li a:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.nav-links li a.active {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* --- Contenedor Principal --- */
+#main-container {
+    flex-grow: 1;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px; /* Ajuste leve de padding */
+    background-color: var(--card-background);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* --- ¡NUEVO! Estilos para el Título con Logo --- */
+#header h1 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 24px; /* Ajustado para dar espacio al logo */
+    font-weight: 600;
+}
+
+#header .logo {
+    height: 40px; /* Altura fija para el logo */
+    width: auto;
+}
+/* ------------------------------------------- */
+
+/* --- Contenido --- */
+#content {
+    flex-grow: 1;
+    padding: 24px 40px;
+    overflow-y: auto;
+}
+
+.card {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-depth);
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.card h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.card p.description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #505050;
+}
+
+/* --- Estilos de Formularios (Inputs, Textareas, Selects) --- */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-family: inherit;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(0, 120, 212, 0.3);
+    background-color: white;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* --- ¡NUEVO! Estilo para descripción de la escala --- */
+.eval-description {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 6px;
+}
+/* ------------------------------------------------- */
+
+/* --- Botones Fluent --- */
+.btn-fluent {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: inherit;
+    border: 1px solid #c0c0c0;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.btn-fluent:hover {
+    background-color: #f9f9f9;
+    border-color: #a0a0a0;
+}
+
+.btn-fluent.accent {
+    background-color: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+}
+
+.btn-fluent.accent:hover {
+    background-color: var(--accent-color-hover);
+    border-color: var(--accent-color-hover);
+}
+
+.btn-fluent.add-task {
+    margin-top: 10px;
+}
+
+/* --- Lista de Tareas --- */
+.task-list {
+    list-style: none;
+    margin-top: 16px;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.task-item input[type="checkbox"] {
+    width: auto;
+    margin-right: 12px;
+    /* Estilo moderno para checkbox */
+    accent-color: var(--accent-color);
+    width: 18px;
+    height: 18px;
+}
+
+.task-item span {
+    flex-grow: 1;
+    font-size: 16px;
+}
+
+.task-item.done span {
+    text-decoration: line-through;
+    color: #808080;
+}
+
+.task-item .delete-task {
+    background: none;
+    border: none;
+    color: #d13438;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 4px;
+}
+
+/* --- Footer --- */
+footer {
+    padding: 20px 40px;
+    background-color: #e0e0e0;
+    text-align: center;
+    font-size: 14px;
+    color: #606060;
+}

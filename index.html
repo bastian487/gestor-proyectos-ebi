@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Proyectos EBI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>Proyecto EBI</h3>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" data-page="equipo">🚀 Equipo y Proyecto</a></li>
+            <li><a href="#" data-page="descubrimiento">1. Descubrimiento</a></li>
+            <li><a href="#" data-page="interpretacion">2. Interpretación</a></li>
+            <li><a href="#" data-page="ideacion">3. Ideación</a></li>
+            <li><a href="#" data-page="experimentacion">4. Experimentación</a></li>
+            <li><a href="#" data-page="evolucion">5. Evolución</a></li>
+        </ul>
+    </nav>
+
+    <div id="main-container">
+        <header id="header">
+            <h1 id="page-title">
+                <img src="Logo-DGETP-UTU-Azul-transparente-PNG (1).png" alt="Logo UTU" class="logo">
+                <span>Gestor de Proyectos</span>
+            </h1>
+            <div class="io-buttons">
+                <label for="load-json" class="btn-fluent">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                        <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/>
+                    </svg>
+                    Cargar
+                </label>
+                <input type="file" id="load-json" accept=".json" style="display: none;">
+                
+                <button id="save-json" class="btn-fluent">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                    </svg>
+                    Guardar
+                </button>
+                
+                <button id="export-pdf" class="btn-fluent accent">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M5.523 12.424c.14-.082.293-.162.459-.238a7.878 7.878 0 0 1-.45.606c-.28.337-.498.516-.635.572a.266.266 0 0 1-.035.012.282.282 0 0 1-.026-.044c-.03-.062-.053-.141-.07-.231a.55.55 0 0 1 .003-.108c.003-.01.003-.01.004-.011.006-.024.01-.05.016-.077a.07.07 0 0 1 .007-.01c.003-.005.005-.01.008-.014c.004-.006.007-.01.011-.014a.201.201 0 0 1 .028-.021.5.5 0 0 1 .03-.021c.01-.007.02-.014.03-.02a.2.2 0 0 1 .028-.024c.04-.03.08-.06.12-.09a.7.7 0 0 1 .024-.022Z"/>
+                        <path fill-rule="evenodd" d="M1.75 0A1.75 1.75 0 0 0 0 1.75v12.5C0 15.216.784 16 1.75 16h12.5A1.75 1.75 0 0 0 16 14.25V1.75A1.75 1.75 0 0 0 14.25 0H1.75ZM1.5 1.75a.25.25 0 0 1 .25-.25h12.5a.25.25 0 0 1 .25.25v12.5a.25.25 0 0 1-.25.25H1.75a.25.25 0 0 1-.25-.25V1.75ZM4.25 14V7.5h1v6.5H4.25Zm1.5-6.5h.75a.75.75 0 0 1 .75.75v2.25H5.75V7.5Zm2.25.75a.75.75 0 0 0-.75.75v4.5a.75.75 0 0 0 .75.75h.75a.75.75 0 0 0 .75-.75V8.25a.75.75 0 0 0-.75-.75H8Zm3.75 0h.75a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-.75.75h-.75a.75.75 0 0 1-.75-.75V8.25a.75.75 0 0 1 .75-.75Z"/>
+                    </svg>
+                    Exportar PDF
+                </button>
+            </div>
+        </header>
+        
+        <main id="content"></main>
+
+        <footer>
+            <p>&copy; 2024 Sebastián Dutruel. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
